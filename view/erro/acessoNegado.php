@@ -1,0 +1,1 @@
+<?php echo $oErro->acessoNegado("Desculpe,vocè não tem acesso a esta página.", RAIZ . 'login/inicio'); ?>
