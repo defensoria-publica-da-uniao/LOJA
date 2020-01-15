@@ -437,21 +437,20 @@ class materiais extends MMateriais {
 
     function buscarCarrinho() {
         if (!isset($_SESSION['DADOSUSUARIOFORA']['idProduto'])) {
-            echo'    <center> <div class="page-content-inner">
-                                        <div class="row">
-                                            <div class="col-md-12 page-500">
-                                                <div class=" number font-red">  </div>
-                                                <div class=" details">
-                                                    <h3>Oops! Seu Carrinho Encontra-se Vazio.</h3>
-                                                    <p> Clique no Botão para ir à listagem de Materiais! .
-                                                        <br/> </p>
-                                                    <p>
-                                                        <a href="materiais" class="btn blue btn-outline"> Materiais</a>
-                                                        <br> </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> </center>';
+            echo'<div class="row">
+            <div class="col-md-12 page-500">
+                <div class=" number font-blue"><i class="glyphicon glyphicon-shopping-cart"></i></div>
+                <div class=" details">
+                    <h3 class="font-blue">Opa! Seu carrinho encontra-se vazio.</h3>
+                    <p> Verifique os produtos e serviços disponiveis em nossa loja.
+                    </p>
+                    <p>
+                        <a href="materiais" class="btn blue btn-outline"> Produtos e Serviços </a>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>';
         }
     }
 

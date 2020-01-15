@@ -17,6 +17,8 @@
         <div class="top-menu">
             <ul class="nav navbar-nav pull-right">
                 
+                <?php if (@$_SESSION['VALID'] and ( $modulo != 'login' )) { ?>
+                
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <img alt="Perfil" class="img-circle" src="<?php echo IMG; ?>no-user-2.jpg">
@@ -25,13 +27,18 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
+                            <a href="<?php echo RAIZ . "materiais/minhasSolicitacoesMateriais"?>">
+                                <i class="icon-book-open"></i> Materias Solicitados
+                            </a>
+                        </li>
+                        <li>
                             <a href="<?php echo RAIZ . "servico/minhasSolicitacoesServicos"?>">
-                                <i class="icon-bubbles"></i> Serviços Solicitados
+                                <i class="icon-earphones-alt"></i> Serviços Solicitados
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo RAIZ . "usuario/editarUsuario"?>">
-                                <i class="icon-settings"></i> Editar dados
+                                <i class="icon-settings"></i> Editar dados perfil
                             </a>
                         </li>
                         <li class="divider"> </li>
@@ -50,6 +57,16 @@
                     <ul class="dropdown-menuss">
                     </ul>
                 </li>
+                
+                <?php } else { ?>
+                    
+                <li class="dropdown dropdown-user">
+                    <a href="<?php echo RAIZ . "login/inicio" ?>" class="dropdown-toggle" >
+                        <i class="icon-login"></i> <span class="username username-hide-on-mobile"> Login &nbsp;&nbsp;&nbsp;</span>
+                    </a>
+                </li>
+
+                <?php } ?>
                 
             </ul>
         </div>

@@ -4,7 +4,7 @@
 ?>
 <!-- TÍTULO E DIRETÓRIO DE NAVEGAÇÃO -->
 <h1 class="page-title">
-    Minhas Solicitações de Serviços
+    Minhas Solicitações de <font  class="font-blue-soft" >Serviços</font> <small>Todas as solicitações enviadas</small>
 </h1>
 <div class="page-bar">
     <ul class="page-breadcrumb">
@@ -94,7 +94,7 @@
                     </div>
                     <div class="details">
                         <div class="number"> 150 </div>
-                        <div class="desc"> Aguardando Resposta do Cliente </div>
+                        <div class="desc"> Aguardando a sua Resposta </div>
                     </div>
                     <a class="more" href="javascript:;"> Veja Mais
                         <i class="m-icon-swapright m-icon-white"></i>

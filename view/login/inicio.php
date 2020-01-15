@@ -120,6 +120,11 @@
                 </div>
                 
                 <div class="create-account">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <a href="<?php echo RAIZ.'materiais/materiais';?>" class="btn green pull-right"> Materias e Serviços </a></p>
+                        </div>
+                    </div>
                     <center>
                     <p>Informações do Sistema procure a Assessoria de Comunicação - ASCOM</p>
                     <p>+55 (61) 3318-9999 | ascom@dpu.def.br<p/>

@@ -1,14 +1,16 @@
 <!-- TÍTULO E DIRETÓRIO DE NAVEGAÇÃO -->
 <h1 class="page-title">
-    Produtos e Serviços
+    Materias e Serviços
 </h1>
 <div class="page-bar">
     <ul class="page-breadcrumb">
+        <?php if (@$_SESSION['VALID'] and ( $modulo != 'login' )) { ?>
         <li>
             <i class="icon-folder-alt"></i>
             <span>Produtos - Materiais</span>
             <i class="fa fa-angle-right"></i>
         </li>
+        <?php } ?>
         <li>
             <i class="icon-basket-loaded"></i>
             <a href="<?php echo RAIZ . "materiais/materiais"; ?>">Produtos e Serviços</a>
@@ -33,10 +35,10 @@
             <div class="tabbable-custom nav-justified">
                 <ul class="nav nav-tabs nav-justified">
                     <li class="active">
-                        <a href="#tab_material" data-toggle="tab"> <i class="icon-layers"></i> Materias </a>
+                        <a href="#tab_material" data-toggle="tab"> <i class="icon-book-open"></i> Materias </a>
                     </li>
                     <li>
-                        <a href="#tab_servicos" data-toggle="tab"> <i class="icon-bubbles"></i> Serviços </a>
+                        <a href="#tab_servicos" data-toggle="tab"> <i class="icon-earphones-alt"></i> Serviços </a>
                     </li>
                 </ul>
                 <div class="tab-content">

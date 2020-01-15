@@ -47,6 +47,8 @@
 
         <ul class="page-sidebar-menu page-header-fixed page-sidebar-menu-hover-submenu page-sidebar-menu-compact" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             
+            <?php if (@$_SESSION['VALID'] and ( $modulo != 'login' )) { ?>
+            
             <li class="nav-item start ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
@@ -122,14 +124,14 @@
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-folder-alt"></i>
-                    <span class="title">Produtos - Materiais</span>
+                    <span class="title">Gestão de Materias</span>
                     <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start">
                         <a href="<?php echo RAIZ . "materiais/materiais"?>" class="nav-link ">
                             <i class="icon-basket-loaded"></i> 
-                            <span class="title">Produtos e Serviços</span>
+                            <span class="title">Materias e Serviços</span>
                         </a>
                     </li>
                     <li class="nav-item start">
@@ -169,6 +171,18 @@
                 </ul>
             </li>
             
+            <?php } else { ?>
+                
+            <li class="nav-item start ">
+                <a href="<?php echo RAIZ . "materiais/materiais"?>" class="nav-link nav-toggle">
+                    <i class="icon-basket-loaded"></i> 
+                    <span class="title">Materias e Serviços</span>
+                </a>
+            </li>
+                
+            <?php } ?>
+            
+            <?php if (@$_SESSION['VALID'] and ( $modulo != 'login' )) { ?>
             <li class="nav-item start ">
                 <a href="<?php echo RAIZ . "materiais/carrinho"?>" class="nav-link nav-toggle">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -176,6 +190,27 @@
                     <span class="badge badge-danger"><?php echo $oController->checkCarrinho($_SESSION['LOGIN']['id_usuario']);?></span>
                 </a>
             </li>
+            
+            <?php } else { ?>
+            <!-- USUÁRIO EXTERNO NÃO LOGADO -->
+            <li class="nav-item start ">
+                <a href="<?php echo RAIZ . "materiais/final_pedido"?>" class="nav-link nav-toggle">
+                    <?php
+                        if (isset($_SESSION['DADOSUSUARIOFORA']['idProduto'])) {
+                            $total_carrinho = count($_SESSION['DADOSUSUARIOFORA']['idProduto']);
+                        } else {
+                            $total_carrinho = 0;
+                        }
+                    ?>
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                    <span class="title">Carrinho</span>
+                    <span class="badge badge-danger"><?php echo $total_carrinho; ?></span>
+                </a>
+            </li>
+            <!-- FIM USUÁRIO EXTERNO NÃO LOGADO -->
+            <?php } ?>
+            
+            <?php if (@$_SESSION['VALID'] and ( $modulo != 'login' )) { ?>
             
             <li class="nav-item start ">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -249,6 +284,8 @@
                     </li>
                 </ul>
             </li>
+            
+            <?php } ?>
             
             <li class="nav-item start ">
                 <a href="<?php echo RAIZ . "inicio/manual"?>" class="nav-link nav-toggle">
