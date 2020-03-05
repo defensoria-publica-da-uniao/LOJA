@@ -49,6 +49,7 @@
             
             <?php if (@$_SESSION['VALID'] and ( $modulo != 'login' )) { ?>
             
+            <!--
             <li class="nav-item start ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
@@ -120,7 +121,7 @@
                     </li>
                 </ul>
             </li>
-            
+            -->
             <li class="nav-item start">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-folder-alt"></i>
